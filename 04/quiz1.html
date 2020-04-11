@@ -81,7 +81,7 @@
         pre_btn.addEventListener('click', function(){
             if (page > 0){
                 page -= 1;
-                page_num.innerHTML = page+1 + ' / 3';
+                page_num.innerHTML = page+1 + ' / ' + str.length;
                 console.log(page);
                 wrap.innerHTML = str[page];
             }
@@ -89,7 +89,7 @@
         next_btn.addEventListener('click', function(){
             if(page != 2){
                 page += 1;
-                page_num.innerHTML = page+1 + ' / 3';
+                page_num.innerHTML = page+1 + ' / ' + str.length;
                 console.log(page);
                 wrap.innerHTML = str[page];
             }
