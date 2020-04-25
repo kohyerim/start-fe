@@ -15,7 +15,4 @@ function gugudan(number){
     }
 }
 
-
-btn.addEventListener("click", function(){
-    gugudan(num.value);
-});
+btn.addEventListener("click", event => gugudan(num.value));
