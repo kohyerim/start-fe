@@ -1,0 +1,26 @@
+{
+  "name": "start-fe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kohyerim/start-fe.git"
+  },
+  "author": "kohyerim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kohyerim/start-fe/issues"
+  },
+  "homepage": "https://github.com/kohyerim/start-fe#readme"
+}
