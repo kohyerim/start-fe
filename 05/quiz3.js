@@ -1,74 +1,78 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-undef */
+/* eslint-disable camelcase */
+const redBtn = document.querySelector('.add-red');
+const addBtn = document.querySelector('.add-btn');
+const delBtn = document.querySelector('.delete-btn');
+const txtBtn = document.querySelector('.text-btn');
+const resetBtn = document.querySelector('.reset-btn');
+const toggleBtn = document.querySelector('.toggle-btn');
+const imgBtn = document.querySelector('.image-btn');
 
-var redBtn = document.querySelector(".add-red");
-var addBtn = document.querySelector(".add-btn");
-var delBtn = document.querySelector(".delete-btn");
-var txtBtn = document.querySelector(".text-btn");
-var resetBtn = document.querySelector(".reset-btn");
-var toggleBtn = document.querySelector(".toggle-btn");
-var imgBtn = document.querySelector(".image-btn");
-
-function addRed(){
-    var boxes = document.querySelectorAll(".box");
-    var boxNum = boxes.length;
-    for (var i=0; i<boxNum; i++){
-        if (!boxes[i].classList.contains("red")) boxes[i].className += ' red';
-    }
+function addRed() {
+  const boxes = document.querySelectorAll('.box');
+  const boxNum = boxes.length;
+  for (let i = 0; i < boxNum; i++) {
+    if (!boxes[i].classList.contains('red')) boxes[i].className += ' red';
+  }
 }
 
-function addBtnFunc(){
-    var box = document.createElement("div");
-    var pre_box = document.querySelector(".box");
-    if (pre_box === null) classList = "box";
-    else classList = pre_box.className;
-    box.className = classList;
+function addBtnFunc() {
+  const box = document.createElement('div');
+  const pre_box = document.querySelector('.box');
+  if (pre_box === null) classList = 'box';
+  // eslint-disable-next-line no-undef
+  else classList = pre_box.className;
+  box.className = classList;
+  document.body.appendChild(box);
+}
+
+function del() {
+  const box = document.querySelectorAll('.box');
+  const num = box.length;
+  if (num !== 0) document.body.removeChild(box[num - 1]);
+}
+
+function addText() {
+  const str = document.querySelector('.txt').value;
+  const boxes = document.querySelectorAll('.box');
+  const boxNum = boxes.length;
+  for (let i = 0; i < boxNum; i++) {
+    boxes[i].innerHTML += str;
+  }
+}
+
+function reset() {
+  const boxes = document.querySelectorAll('.box');
+  const num = boxes.length;
+  for (let i = 0; i < num; i++) {
+    boxes[i].remove();
+  }
+}
+
+function toggle() {
+  const boxes = document.querySelectorAll('.box');
+  const num = boxes.length;
+  for (let i = 0; i < num; i++) {
+    if (!boxes[i].classList.contains('hidden'))
+      boxes[i].classList.add('hidden');
+    else boxes[i].classList.remove('hidden');
+  }
+}
+
+function imgFunc() {
+  const url = 'https://i.imgur.com/69NjYBH.png';
+  const str = `<img src='${url}' class='img'>`;
+  let boxes = document.querySelectorAll('.box');
+  if (boxes.length === 0) {
+    const box = document.createElement('div');
+    box.className = 'box';
     document.body.appendChild(box);
-}
-
-function del(){
-    var box = document.querySelectorAll(".box");
-    var num = box.length;
-    if(num !== 0) document.body.removeChild(box[num-1]);
-}
-
-function addText(){
-    var str = document.querySelector(".txt").value;
-    var boxes = document.querySelectorAll(".box");
-    var boxNum = boxes.length;
-    for (var i=0; i<boxNum; i++){
-        boxes[i].innerHTML += str;
-    }
-}
-
-function reset(){
-    var boxes = document.querySelectorAll(".box");
-    var num = boxes.length;
-    for(var i=0; i<num; i++){
-        boxes[i].remove();
-    }
-}
-
-function toggle(){
-    var boxes = document.querySelectorAll(".box");
-    var num = boxes.length;
-    for(var i=0; i<num; i++){
-        if (!boxes[i].classList.contains('hidden')) boxes[i].classList.add('hidden');
-        else boxes[i].classList.remove('hidden');
-    }
-}
-
-function imgFunc(){
-    var url = "https://i.imgur.com/69NjYBH.png";
-    var str = "<img src='" + url + "' class='img'>";
-    var boxes = document.querySelectorAll(".box");
-    if (boxes.length === 0) {
-        var box = document.createElement("div");
-        box.className = "box";
-        document.body.appendChild(box);
-    }
-    boxes = document.querySelectorAll(".box");
-    for (var i=0; i<boxes.length; i++){
-        boxes[i].innerHTML += str;
-    }
+  }
+  boxes = document.querySelectorAll('.box');
+  for (let i = 0; i < boxes.length; i++) {
+    boxes[i].innerHTML += str;
+  }
 }
 
 redBtn.addEventListener('click', addRed);
