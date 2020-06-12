@@ -10,6 +10,7 @@ function init(data) {
 
     const text = $input.value;
     if (!text) return;
+
     $input.value = '';
 
     data.push({
